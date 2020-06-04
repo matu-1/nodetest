@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
+console.log('saludo','hola mundo');
 
 app.get('/', (req, res) => {
   res.send("hola mundo");
 });
 
-app.listen(3000, () => {
-  console.log('Escuchando el puerto 3000');
+process.env.PORT = process.env.PORT || 3000
+app.listen(process.env.PORT, () => {
+  console.log('Escuchando el puerto', process.env.PORT);
 })
-
-console.log('hola mundo');
